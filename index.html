@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MDS Task | Jihan Jasper Al Rashid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tasks">
+      <div class="tasks__header">
+        <p class="tasks__header__title">Upcoming Activities</p>
+        <button class="tasks__header__button">
+          <svg
+            class="tasks__header__button__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+            />
+          </svg>
+        </button>
+      </div>
+      <hr class="divider" />
+      <div class="tasks__content"></div>
+      <div class="modal__container">
+        <div class="modal">
+          <div class="modal__header">
+            <p class="modal__header__title">New Entry</p>
+            <button class="modal__header__close">
+              <img src="/assets/images/icons/close-icon.svg" alt="Close" />
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__body__input">
+              <label for="task-title">Title</label>
+              <input type="text" id="task-title" name="task-title" />
+            </div>
+            <div class="modal__body__input">
+              <label for="task-date">Date</label>
+              <input type="date" id="task-date" name="task-date" />
+            </div>
+            <div class="modal__body__input">
+              <label for="task-location">Location</label>
+              <input type="text" id="task-location" name="task-location" />
+            </div>
+          </div>
+          <div class="modal__footer">
+            <button class="modal__footer__cancel">Cancel</button>
+            <button class="modal__footer__save">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

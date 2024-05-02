@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+$primary-color: #bdbb33;
+$primary-color-dark: #6c7126;
+$primary-color-darker: #6d6d0d;
+$light-gray: #ebebeb;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.divider {
+  border: 1px solid $light-gray;
+}
+
+.modal__container {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.35);
+  max-width: 20rem;
+  overflow: hidden;
+
+  .modal {
+    &__header {
+      display: flex;
+      background-color: $primary-color;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding: 1rem;
+
+      &__title {
+        color: white;
+        font-size: 1.25rem;
+      }
+
+      &__close {
+        background-color: transparent;
+        filter: invert(100%);
+        border: 0;
+        border-radius: 100%;
+        img {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+
+    &__body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &__input {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        gap: 1rem;
+
+        input {
+          font-size: 1rem;
+          border: 0;
+          padding-block: 0.25rem;
+          border-bottom: 1px solid hsl(0, 0%, 80%);
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      gap: 1rem;
+      justify-content: end;
+
+      &__save,
+      &__cancel {
+        background-color: white;
+        border: 1px solid $primary-color-darker;
+        color: $primary-color-darker;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+      }
+
+      &__save {
+        background-color: $primary-color-darker;
+        color: white;
+      }
+    }
+  }
+}
+
+.tasks {
+  border: blue 1px solid;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem;
+  max-width: 25rem;
+  padding: 1rem;
+  position: relative;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      color: $primary-color-dark;
+      font-size: 1.25rem;
+    }
+
+    &__button {
+      background-color: $light-gray;
+      border: 0;
+      border-radius: 100%;
+      padding: 0.75rem;
+
+      &__icon {
+        fill: $primary-color;
+        height: 1rem;
+        width: 1rem;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+
+        &__icon {
+          &:hover {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__item {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      &__menu {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.35);
+        position: absolute;
+        padding: 0.5rem;
+        right: 2rem;
+        top: 0;
+        z-index: 10;
+
+        &__button {
+          background-color: transparent;
+          border: 0;
+          font-family: inherit;
+          font-size: 1rem;
+          font-weight: 700;
+          padding: 1rem;
+          border-radius: 1rem;
+
+          &:hover {
+            transition: background-color 0.2s ease-in-out;
+            background-color: $light-gray;
+          }
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+
+        &__main {
+          font-size: 1.5rem;
+        }
+
+        &__sub {
+          display: flex;
+          gap: 0.75rem;
+
+          p {
+            font-size: 0.8rem;
+            opacity: 40%;
+          }
+        }
+      }
+
+      &__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &__check {
+          filter: invert(77%) sepia(86%) saturate(393%) hue-rotate(8deg)
+            brightness(86%) contrast(86%);
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+
+        &__button {
+          background-color: transparent;
+          border: 0;
+
+          &__icon {
+            filter: invert(33%) sepia(74%) saturate(626%) hue-rotate(23deg)
+              brightness(100%) contrast(90%);
+            width: 1.75rem;
+            height: 1.75rem;
+          }
+        }
+      }
+    }
+  }
+}
